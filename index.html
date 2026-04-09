@@ -1,1 +1,418 @@
+<!DOCTYPE html>    <!-- doctype’s purpose is to tell the browser what version of HTML is being used that is HTML 5 -->
+<html>  
+    
+<head > <title>Odyssey | Travel</title>  
 
+
+          <link rel="icon" type="image/jpg"  href="planeicon.png"  >  <!-- favicon  -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">  <!--allows use special characters and emojis -->
+
+</head>
+
+<body>
+
+<style> 
+body {
+  background-color: white;  /* sets background color of page to white */
+  margin: 0px;  /*remove default margin around body  */
+  
+  font-family: Arial, sans-serif;  /* changes font of whole page  */
+  
+}
+</style>
+
+
+<style>
+
+
+
+
+
+
+
+
+  #navbar{
+    position: relative;  /* makes login link stay inside navbar this is its container */
+    width: 100%;  /* full width of page */
+    height: 70px;
+    background-color: lightgray;
+    top: 0px; left: 0px; 
+      
+    
+  }
+
+
+  #companyname {
+    position: absolute;  /* allows us to position it anywhere inside the navbar */  
+    left :73px;
+    top: 14px; 
+    margin: 0; /* remove default margins that might push text down */
+    font-size: 20px;
+      font-family: 'Arial Black', Gadget, sans-serif;
+      color: black;
+      font-weight: 800; /* makes text bold  */
+
+
+  }
+
+
+
+
+#logo {
+position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%; /* makes the image circular */;
+  height: 20px;         /* control logo height */
+  width: auto;          /* keep aspect ratio */
+  /*logo should appear as a perfect circle in the navbar. The border-radius: 50% works when the element is square (equal width and height).*/
+  cursor: pointer;      
+}
+
+
+
+#loginlink a{
+  
+  position: absolute; top: 13px; right: 30px; 
+  font-family:  'Tahoma';
+  font-size: 18px;
+  width: 120px;
+  background-color: #333; /* Dark background color */;
+  padding: 10px;  /* adds space inside the box around the text */
+  border-radius: 8px; /* Rounded corners */
+  color: white; 
+ text-decoration: none; /* Removes underline from links */
+  text-align: center;
+}   /* styles the link inside the h3  */
+
+
+#loginlink {
+  margin: 0; /* removes default margin around h3 */
+}
+#registerlink a{
+  
+  position: absolute; top: 13px; right: 180px; 
+  font-family: 'tahoma';
+  text-decoration: none; /* Removes underline from links */
+  text-align: center;
+  font-size: 18px;
+  width: 120px;
+  background-color: #333; /* Dark background color */;
+  padding: 10px;  /* adds space inside the box around the text */
+  border-radius: 8px; /* Rounded corners */
+  color: white;
+}
+#registerlink {
+  margin: 0; /* removes default margin around h4 */
+}
+
+#logo {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  height: 50px;      /* control logo height */
+  width: 50px;       /* set to same as height for circle */
+  border-radius: 50%; /* makes it circular */
+  object-fit: cover; /* ensures image fills the circle properly */
+
+
+
+}
+
+#destinations{
+margin: 0;  /* removes default margin from top around this h4 */
+
+}
+
+#destinations a{
+text-decoration: none;
+position: absolute; 
+top: 13px;
+right: 350px;
+width: 120px;  
+text-align: center;
+font-family: 'tahoma';
+font-size: 18px;
+background-color: #333; /* Dark background color */;
+padding: 10px;
+color: white;
+border-radius: 8px; /* Rounded corners */
+}
+
+
+#manage{
+text-decoration: none;
+position: absolute;
+top:13px ;
+right: 550px;
+color: black;
+
+
+}
+
+
+</style>
+
+<nav id="navbar">
+
+   <h4 id="companyname"  > ODYSSEY TRAVEL     </h4>
+  <img id="logo" src="https://images.pexels.com/photos/36874587/pexels-photo-36874587.jpeg" alt="plane icon" > <!-- logo image is host with pexels image-->  
+  <h4 id="loginlink">  <a href="http://localhost/secure_login/loginhtml.php" >Login</a> </h4>
+  <h4 id="registerlink"> <a href="http://localhost/secure_login/registerhtml.php"> Register </a>  </h4>
+  <h4 id="destinations" > <a href="http://localhost/secure_login/destinationshtml.php"> Destinations  </a>  </h4>
+  <a id="manage" href="http://localhost/secure_login/manage_destinations.php">Manage Destinations</a>
+</nav>
+
+
+
+
+  <style>
+
+
+#topbanner {
+  position: relative ;       /* ensures ::before stays inside the img */
+  height: 95vh;                    /* height of banner */
+
+  background-image: url("https://images.pexels.com/photos/8726518/pexels-photo-8726518.jpeg"); 
+  background-position: center center;
+  height: 700px ; /* height of banner */
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 50px;
+  font-weight: bold; 
+ padding: 20px;
+
+}
+
+
+#topbanner::before{
+  content: "";    /* creates a pseudo(fake)-element that is a child of the banner */
+  position: absolute;   /*so we can position it takes the pseudo-element out of normal layout and lets you manually place it anywhere inside the parent(banner)*/
+  inset: 0; /*It pins all four sides of the overlay to the edges of the banner covers the entire banner */
+  background: rgba(0, 0, 0, 0.5); /* 50% dark overlay */
+  z-index: 0;       /* places it behind the text and other content inside the banner */
+}    /*this piece makes bg img little dimmer so u can see words over it clear*/
+
+
+
+
+ 
+/* The colored box */
+.text-box {
+   display: inline-block; /* 👈 makes the box fit tightly around text */
+  background-color: burlywood; /* background color */
+  color: black;                /* text color */
+padding: 20px 40px;   
+  border-radius: 15px; /* rounded corners */
+  text-align: center;
+  font-weight: bold;
+
+  
+   /* 👇 This tilts the box */
+  transform: rotate(-7deg);
+  margin-left: 10px;
+  margin-top: 20px;
+}
+#textbox2 {
+   display: inline-block; /*  makes the box fit tightly around text */
+  background-color: rgb(25, 121, 41); /* background color */
+
+  color: black;                /* text color */
+  padding: 20px 40px;   
+  border-radius: 15px; /* rounded corners */
+  text-align: center;
+  
+   /* 👇 This tilts the box */
+  transform: rotate(8deg);
+  position: absolute ; left: 15px; top: 165px;
+  
+}
+
+#textbox3 {
+
+  background-color: rgb(200, 221, 7); /* background color */
+  color: black;                /* text color */
+    opacity: 0.8; /* makes box slightly see-through */
+
+  padding: 20px 40px;  /*padding increases the space btwn the border of a box and the content of the box.*/    
+  border-radius: 15px; /* rounded corners */
+  text-align: center;
+  
+   
+  position: absolute ; left: 20px; top: 265px;
+
+}
+#sometext{
+position: absolute; top: 40px; right: 150px; 
+font-family: 'Arial Black', Gadget, sans-serif;
+color: white;
+font-size: 22px;
+font-weight: 800;
+
+
+}
+
+</style>
+
+
+ <div id="topbanner">  <!-- This is the banner section with a background image and overlay text. The ::before pseudo-element creates a dark overlay on top of the background image to make the text more readable.-->
+  <div id="sometext"  > Make Your Travel Arrangements </div>
+    <div class="text-box">TRAVEL</div>
+    <div id="textbox2" > ANYWHERE  </div>  
+    <div id="textbox3" > ANYTIME</div>  
+           
+
+</div>
+
+
+<style>
+
+/* Popular Destinations Styles */
+#popular-destinations {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #f9f9f9; /* Light background to separate sections */
+}
+
+#popular-destinations h2 {
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.destination-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px); /* subtle lift effect on hover */
+}
+
+.destination-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.destination-card h3 {
+  margin: 15px;
+  font-size: 24px;
+  color: #333;
+}
+
+.destination-card p {
+  margin: 0 15px 15px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.destination-card button {
+  margin: 0 15px 15px;
+  padding: 10px 20px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.destination-card button:hover {
+  background: #555;
+}
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+<section id="popular-destinations">
+
+  <h2>Popular Destinations</h2>
+
+  <div class="destinations-grid">
+
+
+    <div class="destination-card">
+      <img src="https://images.pexels.com/photos/27965325/pexels-photo-27965325.jpeg" alt="Mombasa">
+      <h3>Mombasa</h3>
+      <p>Experience the beauty of the Kenyan coast with pristine beaches and rich cultural heritage.</p>
+      <button>Book Now</button>
+    </div>
+
+    <div class="destination-card">
+      <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg" alt="Paris">
+      <h3>Paris</h3>
+      <p>Experience the romance of the City of Light with iconic landmarks and charming cafes.</p>
+      <button>Book Now</button>
+    </div>
+
+
+    <div class="destination-card">
+      <img src="https://images.pexels.com/photos/15496531/pexels-photo-15496531.jpeg" alt="Nairobi">
+      <h3>Nairobi</h3>
+      <p>The capital city of Kenya offers a unique blend of modernity and traditional culture ,the only capital city with a national park.</p>
+      <button>Book Now</button>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<div id="header">
+<h1> TOURS </h1>
+</div>
+
+
+
+<style>
+  footer{
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: white;
+  }
+</style>
+
+<footer>
+  &copy;  <span id="year"></span> Odyssey Travel Companion <br> Developed by Lex Corp
+  <script>
+  // Get the current year
+  document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+
+</footer>
+
+
+
+</html>
