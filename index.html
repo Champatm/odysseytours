@@ -20,6 +20,8 @@ body {
   font-family: Arial, sans-serif;  /* changes font of whole page  */
   
 }
+
+
 </style>
 
 
@@ -45,7 +47,7 @@ body {
 
   #companyname {
     position: absolute;  /* allows us to position it anywhere inside the navbar */  
-    left :73px;
+    left :6%;
     top: 14px; 
     margin: 0; /* remove default margins that might push text down */
     font-size: 20px;
@@ -62,7 +64,7 @@ body {
 #logo {
 position: absolute;
   top: 5px;
-  left: 5px;
+  left: 2%;
   border-radius: 50%; /* makes the image circular */;
   height: 20px;         /* control logo height */
   width: auto;          /* keep aspect ratio */
@@ -148,6 +150,47 @@ top:13px ;
 right: 550px;
 color: black;
 
+@media only screen and (max-width: 768px) {  
+
+  /* Shrink the logo and text so they fit side-by-side */
+  #logo { 
+    height: 40px;
+    width: 40px;
+    left: 10px;
+  }
+  
+  #companyname {
+    left: 60px;
+    font-size: 14px;
+    top: 22px;
+  }
+
+  /* Stack or overlap links slightly so they don't go off-screen */
+  #loginlink a, #registerlink a, #destinations a {
+    font-size: 12px;
+    width: 80px; /* Smaller buttons for mobile */
+    padding: 5px;
+    top: 15px;
+  }
+
+  #destinations a { right: 200px; }
+  #registerlink a { right: 110px; }
+  #loginlink a { right: 10px; }
+
+  /* Fix the banner text boxes so they don't overlap too much */
+  .text-box, #textbox2, #textbox3 {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
+  
+  #textbox2 { top: 120px; }
+  #textbox3 { top: 200px; }
+  
+  #sometext {
+    right: 10px;
+    font-size: 16px;
+  }
+}
 
 }
 
@@ -162,6 +205,7 @@ color: black;
   <h4 id="registerlink"> <a href="http://localhost/secure_login/registerhtml.php"> Register </a>  </h4>
   <h4 id="destinations" > <a href="http://localhost/secure_login/destinationshtml.php"> Destinations  </a>  </h4>
   <a id="manage" href="http://localhost/secure_login/manage_destinations.php">Manage Destinations</a>
+
 </nav>
 
 
