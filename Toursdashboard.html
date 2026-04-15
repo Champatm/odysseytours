@@ -34,6 +34,8 @@ body {
 
   #navbar{
     position: relative;  /* makes login link stay inside navbar this is its container */
+    position: sticky;  /* makes the navbar stick to the top of the page when you scroll down */
+    z-index: 1000; /* This keeps it above the banner and images because it has a higher z-index value */
     width: 100%;  /* full width of page */
     height: 70px;
     background-color: lightgray;
@@ -45,7 +47,7 @@ body {
 
   #companyname {
     position: absolute;  /* allows us to position it anywhere inside the navbar */  
-    left :73px;
+    left :6%;
     top: 14px; 
     margin: 0; /* remove default margins that might push text down */
     font-size: 20px;
@@ -62,7 +64,7 @@ body {
 #logo {
 position: absolute;
   top: 5px;
-  left: 5px;
+  left: 2%;
   border-radius: 50%; /* makes the image circular */;
   height: 20px;         /* control logo height */
   width: auto;          /* keep aspect ratio */
@@ -148,9 +150,68 @@ top:13px ;
 right: 550px;
 color: black;
 
-
 }
 
+
+/* This code only runs on phones and small tablets */
+@media only screen and (max-width: 800px) {
+  #navbar {
+    height: 150px; /* Give more height for mobile */
+  }
+
+  #logo {
+    left: 2px;
+    height: 40px;
+    width: 40px;
+  }
+
+  #companyname {
+    left: 50px;
+    font-size: 14px;
+    top: 15px;
+  }
+
+  /* Reposition the links so they don't overlap or go off-screen */
+  #loginlink a { 
+    right: 10px; 
+    top: 55px; /* Move to a second row */
+    width: 80px;
+    font-size: 14px;
+  }
+
+  #registerlink a { 
+    right: 100px; 
+    top: 55px; /* Move to a second row */
+    width: 80px;
+    font-size: 14px;
+  }
+
+  #destinations a { 
+    right: 190px; 
+    top: 55px; /* Move to a second row */
+    width: 90px;
+    font-size: 14px;
+  }
+
+  #manage {
+    right: 10px;
+    top: 15px;
+    font-size: 12px;
+  }
+  
+  /* Fix the banner boxes so they don't look huge on mobile */
+  #topbanner {
+    height: 300px;
+   width: 100%;
+    font-size: 30px;
+  }
+  
+  #sometext {
+    right: 20px;
+    top: 20px;
+    font-size: 16px;
+  }
+}
 
 </style>
 
@@ -162,6 +223,7 @@ color: black;
   <h4 id="registerlink"> <a href="http://localhost/secure_login/registerhtml.php"> Register </a>  </h4>
   <h4 id="destinations" > <a href="http://localhost/secure_login/destinationshtml.php"> Destinations  </a>  </h4>
   <a id="manage" href="http://localhost/secure_login/manage_destinations.php">Manage Destinations</a>
+
 </nav>
 
 
@@ -272,6 +334,17 @@ font-weight: 800;
 
 <style>
 
+#popularstatement {
+  max-width: 800px;  /* limits the width of the text for better readability */
+  margin: 0 auto 40px; /* centers the text and adds space below */
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6; /* increases space between lines for better readability */
+}
+
+
+
+
 /* Popular Destinations Styles */
 #popular-destinations {
   padding: 50px 20px;
@@ -287,7 +360,7 @@ font-weight: 800;
 
 .destinations-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
@@ -307,7 +380,8 @@ font-weight: 800;
 
 .destination-card img {
   width: 100%;
-  height: 200px;
+  height: 250px;
+
   object-fit: cover;
 }
 
@@ -356,6 +430,9 @@ font-weight: 800;
 
   <h2>Popular Destinations</h2>
 
+
+  <p id="popularstatement">Discover the places that leave travelers speechless and keep them coming back in Kenya.Collect moments from sun-soaked shores ,wildlife to bustling city centers, find your perfect escape right here.</p>
+
   <div class="destinations-grid">
 
 
@@ -366,31 +443,100 @@ font-weight: 800;
       <button>Book Now</button>
     </div>
 
-    <div class="destination-card">
-      <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg" alt="Paris">
-      <h3>Paris</h3>
-      <p>Experience the romance of the City of Light with iconic landmarks and charming cafes.</p>
-      <button>Book Now</button>
-    </div>
-
+    
 
     <div class="destination-card">
       <img src="https://images.pexels.com/photos/15496531/pexels-photo-15496531.jpeg" alt="Nairobi">
       <h3>Nairobi</h3>
       <p>The capital city of Kenya offers a unique blend of modernity and traditional culture ,the only capital city with a national park.</p>
       <button>Book Now</button>
+
+    
     </div>
+
+<div class="destination-card">
+  <img src="https://images.pexels.com/photos/259447/pexels-photo-259447.jpeg" alt="Maasai Mara">
+  <h3>Maasai Mara</h3>
+  <p>Experience the world-famous wildlife reserve and the Great Migration.</p>
+ <a href="destinations.html?id=maasai-mara">View Packages</a>
+    <button> <a href="maasai-mara.html">View Details</a></button>
+  </a>
+</div>
+
+<div class="destination-card">
+   <h3>Naivasha</h3>
+  <img src="https://images.pexels.com/photos/35738849/pexels-photo-35738849.jpeg" alt="Naivasha">
+  <p>Discover the serene beauty of Lake Naivasha and its vibrant birdlife.</p>
+  <button>Book Now</button> 
+
+</div>
+
 
   </div>
 </section>
 
 
 
+<style>
+#internationalstatement {
+  max-width: 800px;  /* limits the width of the text for better readability */
+  margin: 0 auto 40px; /* centers the text and adds space below */
+  font-size: 18px;
+  color: #555;
+}
 
-<div id="header">
-<h1> TOURS </h1>
+
+</style>
+
+
+
+<section  id="international-tours">
+
+  <h2>International Tours</h2>
+
+  <p id="internationalstatement"> "A selection of global favorites designed to broaden horizons and create lifelong memories</p>  
+
+  <div class="destinations-grid">
+
+    <div class="destination-card">
+      <img src="https://images.pexels.com/photos/338515/pexels-photo-338515.jpeg" alt="Paris">
+      <h3>Paris</h3>
+      <p>Experience the romance of the City of Light with iconic landmarks and charming cafes.</p>
+      <button>Book Now</button>
+    </div>
+ 
+
+    <div  class="destination-card">
+           
+      <img src="https://images.pexels.com/photos/466685/pexels-photo-466685.jpeg" alt="Dubai">
+      <h3>Dubai</h3>
+      <p>Experience the blend of opulence and culture in the city of Dubai.</p>
+      <button>Book Now</button>
+
+    </div>
+   
+    
+    </div>
+
+  </div>
+  
+
+
+</section>
+
+
+
+
+
+
+
+<div id="contactsection">
+  <h2>Contact Us</h2>
+
+
+
+
 </div>
-
 
 
 <style>
@@ -403,6 +549,8 @@ font-weight: 800;
     color: white;
   }
 </style>
+
+
 
 <footer>
   &copy;  <span id="year"></span> Odyssey Travel Companion <br> Developed by Lex Corp
