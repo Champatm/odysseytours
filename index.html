@@ -39,6 +39,7 @@ body {
     width: 100%;  /* full width of page */
     height: 70px;
     background-color: lightgray;
+    background-size: cover; /* ensures the background color covers the entire navbar area */
     top: 0px; left: 0px; 
       
     
@@ -156,8 +157,7 @@ color: black;
 /* This code only runs on phones and small tablets */
 @media only screen and (max-width: 800px) {
   #navbar {
-    height: 100px; /* Give more height for mobile */
-    width :100%px;
+    height: 150px; /* Give more height for mobile */
   }
 
   #logo {
@@ -240,7 +240,7 @@ color: black;
   background-image: url("https://images.pexels.com/photos/8726518/pexels-photo-8726518.jpeg"); 
   background-position: center center;
   height: 700px ; /* height of banner */
-  background-size: cover;
+  background-size: cover; /* makes the image cover the entire banner area without distortion */
   background-repeat: no-repeat;
 
   align-items: center;
@@ -460,8 +460,8 @@ font-weight: 800;
   <h3>Maasai Mara</h3>
   <p>Experience the world-famous wildlife reserve and the Great Migration.</p>
  <a href="destinations.html?id=maasai-mara">View Packages</a>
-    <button> <a href="maasai-mara.html">View Details</a></button>
-  </a>
+    <button onclick="location.href='maasai-mara.html'">View Details</button>
+  
 </div>
 
 <div class="destination-card">
