@@ -308,16 +308,13 @@ body {
 
 
  .hero-content {
-            position: relative;
-            z-index: 1;
-            padding: 0 20px; 
-            
             position: absolute;
             z-index: 1;
             left: 50%;
             transform: translateX(-50%);
             bottom: 100px;
-            
+            max-width: 90vw;
+            text-align: center;
         }
 
         .hero-tagline {
@@ -395,6 +392,13 @@ body {
         .btn-outline:hover {
             border-color: var(--gold);
             color: var(--gold);
+        }
+
+        @media (max-width: 600px) {
+            .btn-primary, .btn-outline {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
         }
 
         /* Scroll hint */
