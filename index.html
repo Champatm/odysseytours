@@ -238,18 +238,19 @@ body {
     });
   });
 </script>
-
-<!-- ============================================================
-     EVERYTHING BELOW IS YOUR ORIGINAL CODE — UNCHANGED
-     ============================================================ -->
 <style>
 #topbanner {
   position: relative;
-  height: 700px;
+  min-height: 700px;
   background-image: url("https://images.pexels.com/photos/8726518/pexels-photo-8726518.jpeg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 20px 60px;
+  box-sizing: border-box;
   overflow: hidden;
 }
 
@@ -261,78 +262,73 @@ body {
   z-index: 0;
 }
 
-/* ── The three decorative text boxes ── */
-.text-box {
-  display: inline-block;
-  background-color: burlywood;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 15px;
-  font-weight: bold;
-  font-size: clamp(28px, 8vw, 78px); /* scales with screen */
-  transform: rotate(-7deg);
-  margin-left: 10px;
-  margin-top: 10px;
+/* ── Top row: the three decorative boxes ── */
+.banner-labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
   position: relative;
   z-index: 1;
 }
 
+.text-box {
+  background-color: burlywood;
+  color: black;
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: clamp(22px, 5vw, 52px);
+  transform: rotate(-7deg);
+}
+
 #textbox2 {
-  display: inline-block;
   background-color: rgb(25, 121, 41);
   color: black;
-  padding: 10px 20px;
-  border-radius: 15px;
-  font-size: clamp(26px, 7vw, 70px);
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: clamp(22px, 5vw, 52px);
   transform: rotate(8deg);
-  position: absolute;
-  left: 15px;
-  top: 165px;
-  z-index: 1;
+  margin-top: 10px;
 }
 
 #textbox3 {
   background-color: rgb(200, 221, 7);
   color: black;
-  opacity: 0.8;
-  padding: 10px 20px;
-  border-radius: 15px;
-  font-size: clamp(28px, 8vw, 78px);
-  position: absolute;
-  left: 20px;
-  top: 275px;
-  z-index: 1;
+  opacity: 0.9;
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: clamp(22px, 5vw, 52px);
+  transform: rotate(-3deg);
+  margin-top: 5px;
 }
 
-/* ── Hero content centred at the bottom ── */
+/* ── Bottom: hero text content ── */
 .hero-content {
-  position: absolute;
+  position: relative;
   z-index: 1;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 80px;
-  width: 90%;
-  max-width: 600px;
   text-align: center;
 }
 
 .hero-tagline {
   font-family: 'Lato', sans-serif;
-  font-size: clamp(10px, 2.5vw, 13px);
+  font-size: clamp(10px, 2vw, 13px);
   font-weight: 700;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   text-transform: uppercase;
   color: white;
   margin-bottom: 12px;
 }
 
 .hero-subtitle {
-  font-size: clamp(14px, 3.5vw, 20px);
+  font-size: clamp(14px, 3vw, 20px);
   font-weight: bold;
   color: gold;
   font-family: 'Times New Roman', Times, serif;
-  max-width: 100%;
-  margin: 0 auto 30px;
+  max-width: 520px;
+  margin: 0 auto 28px;
   line-height: 1.7;
 }
 
@@ -346,18 +342,18 @@ body {
 .btn-primary {
   background: gold;
   color: black;
-  padding: 12px 24px;
+  padding: 12px 28px;
   border: none;
   border-radius: 2px;
   font-family: 'Lato', sans-serif;
-  font-size: clamp(11px, 2.5vw, 13px);
+  font-size: clamp(11px, 2vw, 13px);
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
   text-decoration: none;
   display: inline-block;
-  transition: background 0.2s, transform 0.2s;
+  transition: transform 0.2s;
 }
 
 .btn-primary:hover { transform: translateY(-2px); }
@@ -365,11 +361,11 @@ body {
 .btn-outline {
   background: grey;
   color: black;
-  padding: 12px 24px;
+  padding: 12px 28px;
   border: 1px solid rgba(255,255,255,0.5);
   border-radius: 2px;
   font-family: 'Lato', sans-serif;
-  font-size: clamp(11px, 2.5vw, 13px);
+  font-size: clamp(11px, 2vw, 13px);
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -380,7 +376,7 @@ body {
 
 .scroll-hint {
   position: absolute;
-  bottom: 30px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
@@ -397,42 +393,42 @@ body {
 .scroll-hint::after {
   content: '';
   width: 1px;
-  height: 40px;
+  height: 36px;
   background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
   animation: scrollLine 1.5s ease-in-out infinite;
 }
 
 @keyframes scrollLine {
-  0%, 100% { opacity: 0.3; transform: scaleY(1); }
-  50% { opacity: 1; transform: scaleY(0.6); }
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
 }
 
-/* ── Mobile: stack the three boxes more compactly ── */
 @media (max-width: 500px) {
-  #topbanner { height: 600px; }
-
-  #textbox2 { top: 110px; }
-  #textbox3 { top: 200px; }
-
-  .hero-content { bottom: 40px; }
+  #topbanner { min-height: 520px; padding: 24px 16px 50px; }
 }
 </style>
 
 <div id="topbanner">
-  <div class="text-box">TRAVEL</div>
-  <div id="textbox2">ANYWHERE</div>  
-  <div id="textbox3">ANYTIME</div>  
 
+  <!-- Three decorative labels sit at the top -->
+  <div class="banner-labels">
+    <div class="text-box">TRAVEL</div>
+    <div id="textbox2">ANYWHERE</div>
+    <div id="textbox3">ANYTIME</div>
+  </div>
+
+  <!-- Hero content pushed to the bottom -->
   <div class="hero-content">
-        <p class="hero-tagline">Kenya's Premier Travel Company</p>
-       
-        <p class="hero-subtitle">Curated safari experiences, coastal escapes, and international adventures — all from one place.</p>
-        <div class="hero-buttons">
-            <a href="#popular-destinations" class="btn-primary">Explore Destinations</a>
-            <a href="#contactsection" class="btn-outline">Contact Us</a>
-        </div>
+    <p class="hero-tagline">Kenya's Premier Travel Company</p>
+    <p class="hero-subtitle">Curated safari experiences, coastal escapes, and international adventures — all from one place.</p>
+    <div class="hero-buttons">
+      <a href="#popular-destinations" class="btn-primary">Explore Destinations</a>
+      <a href="#contactsection" class="btn-outline">Contact Us</a>
     </div>
-    <div class="scroll-hint">Scroll</div>
+  </div>
+
+  <div class="scroll-hint">Scroll</div>
+
 </div>
 
 <style>
